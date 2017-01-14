@@ -5,7 +5,9 @@
 
     <dimen name="floor_view_holder_height">80dp</dimen>
     <dimen name="floor_text_size">25sp</dimen>
-    <dimen name="unit_view_holder_height">140dp</dimen>
+    <dimen name="unit_view_holder_height">140dp</dimen> <!--not used-->
     <dimen name="unit_title_text_size">40sp</dimen>
     <dimen name="unit_content_text_size">22sp</dimen>
+    <dimen name="unit_detail_title_text_size">60sp</dimen>
+    <dimen name="unit_detail_content_text_size">28sp</dimen>
 </resources>

@@ -27,8 +27,7 @@ public class FloorAdapter extends RecyclerView.Adapter<FloorAdapter.FloorViewHol
 
     @Override
     public void onBindViewHolder(FloorViewHolder holder, int position) {
-        Log.d("onBindViewHolder()", "position: " + position + 1);
-        holder.bind(position);
+        holder.bind(position + 1);
     }
 
     @Override
