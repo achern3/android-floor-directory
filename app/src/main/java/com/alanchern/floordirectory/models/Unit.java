@@ -1,4 +1,4 @@
-package com.alanchern.floordirectory.model;
+package com.alanchern.floordirectory.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

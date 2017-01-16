@@ -1,6 +1,6 @@
-package com.alanchern.floordirectory.floor;
+package com.alanchern.floordirectory.floors;
 
-import com.alanchern.floordirectory.model.Unit;
+import com.alanchern.floordirectory.models.Unit;
 
 import java.util.ArrayList;
 

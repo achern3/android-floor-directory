@@ -1,6 +1,6 @@
-package com.alanchern.floordirectory.floor;
+package com.alanchern.floordirectory.floors;
 
-import com.alanchern.floordirectory.model.Unit;
+import com.alanchern.floordirectory.models.Unit;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by alanchern on 1/15/17.
  */
 
-public class SeventhFloor {
+public class ThirdFloor {
 
     public static ArrayList<Unit> getFloor() {
         ArrayList<Unit> list = new ArrayList<>();

@@ -14,10 +14,10 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.alanchern.floordirectory.fragment.DirectoryFragment;
-import com.alanchern.floordirectory.fragment.EventsFragment;
-import com.alanchern.floordirectory.model.Unit;
-import com.alanchern.floordirectory.fragment.UnitDetailFragment;
+import com.alanchern.floordirectory.fragments.DirectoryFragment;
+import com.alanchern.floordirectory.fragments.EventsFragment;
+import com.alanchern.floordirectory.models.Unit;
+import com.alanchern.floordirectory.fragments.UnitDetailFragment;
 import com.alanchern.floordirectory.utils.NonSwipeableViewPager;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,14 +1,14 @@
-package com.alanchern.floordirectory.model;
+package com.alanchern.floordirectory.models;
 
-import com.alanchern.floordirectory.floor.EighthFloor;
-import com.alanchern.floordirectory.floor.FifthFloor;
-import com.alanchern.floordirectory.floor.FirstFloor;
-import com.alanchern.floordirectory.floor.FourthFloor;
-import com.alanchern.floordirectory.floor.NinthFloor;
-import com.alanchern.floordirectory.floor.SecondFloor;
-import com.alanchern.floordirectory.floor.SeventhFloor;
-import com.alanchern.floordirectory.floor.SixthFloor;
-import com.alanchern.floordirectory.floor.ThirdFloor;
+import com.alanchern.floordirectory.floors.EighthFloor;
+import com.alanchern.floordirectory.floors.FifthFloor;
+import com.alanchern.floordirectory.floors.FirstFloor;
+import com.alanchern.floordirectory.floors.FourthFloor;
+import com.alanchern.floordirectory.floors.NinthFloor;
+import com.alanchern.floordirectory.floors.SecondFloor;
+import com.alanchern.floordirectory.floors.SeventhFloor;
+import com.alanchern.floordirectory.floors.SixthFloor;
+import com.alanchern.floordirectory.floors.ThirdFloor;
 
 import java.util.ArrayList;
 

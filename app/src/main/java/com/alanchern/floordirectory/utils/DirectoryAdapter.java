@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.alanchern.floordirectory.MainActivity;
 import com.alanchern.floordirectory.R;
-import com.alanchern.floordirectory.model.Floor;
-import com.alanchern.floordirectory.model.Unit;
+import com.alanchern.floordirectory.models.Floor;
+import com.alanchern.floordirectory.models.Unit;
 
 import java.util.ArrayList;
 
