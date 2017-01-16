@@ -1,4 +1,4 @@
-package com.alanchern.floordirectory;
+package com.alanchern.floordirectory.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,13 +11,17 @@ public class Unit implements Parcelable {
     private int mFloor;
     private String mUnitNumber;
     private String mUnitName;
+    private String mUnitContactNumber;
+    private String mUnitDescription;
 
     public Unit() {}
 
-    public Unit(int floor, String unitNumber, String unitName) {
+    public Unit(int floor, String unitNumber, String unitName, String unitContactNumber, String unitDescription) {
         mFloor = floor;
         mUnitNumber = unitNumber;
         mUnitName = unitName;
+        mUnitContactNumber = unitContactNumber;
+        mUnitDescription = unitDescription;
     }
 
     private Unit(Parcel in) {
@@ -60,6 +64,22 @@ public class Unit implements Parcelable {
 
     public void setUnitName(String unitName) {
         mUnitName = unitName;
+    }
+
+    public String getUnitContactNumber() {
+        return mUnitContactNumber;
+    }
+
+    public void setUnitContactNumber(String unitContactNumber) {
+        mUnitContactNumber = unitContactNumber;
+    }
+
+    public String getUnitDescription() {
+        return mUnitDescription;
+    }
+
+    public void setUnitDescription(String unitDescription) {
+        mUnitDescription = unitDescription;
     }
 
     @Override

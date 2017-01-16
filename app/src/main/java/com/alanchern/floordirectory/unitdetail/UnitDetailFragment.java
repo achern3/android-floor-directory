@@ -1,4 +1,4 @@
-package com.alanchern.floordirectory;
+package com.alanchern.floordirectory.unitdetail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.alanchern.floordirectory.R;
+import com.alanchern.floordirectory.model.Unit;
 
 /**
  * Created by alanchern on 1/13/17.
