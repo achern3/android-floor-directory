@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Floor Directory</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="directory">Directory</string>
+    <string name="events">Events</string>
+    <string name="detail">Detail</string>
 
-    <string name="floor">Floor %d</string>
+    <string name="error_occurred">An error occurred</string>
 </resources>

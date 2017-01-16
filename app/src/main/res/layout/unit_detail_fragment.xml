@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_margin.small"
             android:text="placeholder1"
-            android:textSize="@dimen/unit_detail_title_text_size" />
+            android:textSize="40sp" />
 
         <TextView
             android:id="@+id/unit_content1"
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_margin"
             android:text="placeholder2"
-            android:textSize="@dimen/unit_content_text_size" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/unit_content2"
@@ -32,6 +32,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_margin"
             android:text="placeholder3"
-            android:textSize="@dimen/unit_detail_content_text_size" />
+            android:textSize="30sp" />
     </LinearLayout>
 </LinearLayout>

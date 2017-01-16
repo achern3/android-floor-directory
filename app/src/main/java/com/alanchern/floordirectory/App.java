@@ -9,24 +9,25 @@ import android.content.Intent;
 
 public class App extends Application {
     private static final String RESTART_ACTIVITY = "com.alanchern.floordirectory.RESTART_ACTIVITY";
+    private static final String ERROR_MESSAGE = "error_message";
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler()
-        {
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
-            public void uncaughtException (Thread thread, final Throwable e) {
-                restartApp();
+            public void uncaughtException(Thread thread, Throwable e) {
+                restartApp(e);
             }
         });
     }
 
-    private void restartApp() {
+    private void restartApp(Throwable e) {
         Intent intent = new Intent();
         intent.setAction(RESTART_ACTIVITY);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // required when starting from Application
+        intent.putExtra(ERROR_MESSAGE, e.toString());
         startActivity(intent);
 
         System.exit(1); // kill off the crashed app

@@ -2,12 +2,11 @@
 <resources>
     <dimen name="common_margin.small">8dp</dimen>
     <dimen name="common_margin">16dp</dimen>
+    <dimen name="common_padding.small">8dp</dimen>
+    <dimen name="common_padding">16dp</dimen>
+    <dimen name="common_padding.large">32dp</dimen>
 
-    <dimen name="floor_view_holder_height">80dp</dimen>
-    <dimen name="floor_text_size">25sp</dimen>
-    <dimen name="unit_view_holder_height">140dp</dimen> <!--not used-->
-    <dimen name="unit_title_text_size">40sp</dimen>
-    <dimen name="unit_content_text_size">22sp</dimen>
-    <dimen name="unit_detail_title_text_size">60sp</dimen>
-    <dimen name="unit_detail_content_text_size">28sp</dimen>
+    <dimen name="separator_size">2dp</dimen>
+    <dimen name="floor_text_size">40sp</dimen>
+    <dimen name="unit_table_row_text_size">25sp</dimen>
 </resources>

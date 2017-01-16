@@ -1,4 +1,4 @@
-package com.alanchern.floordirectory;
+package com.alanchern.floordirectory.utils;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,15 +9,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.alanchern.floordirectory.floor.EighthFloor;
-import com.alanchern.floordirectory.floor.FifthFloor;
-import com.alanchern.floordirectory.floor.FirstFloor;
-import com.alanchern.floordirectory.floor.FourthFloor;
-import com.alanchern.floordirectory.floor.NinthFloor;
-import com.alanchern.floordirectory.floor.SecondFloor;
-import com.alanchern.floordirectory.floor.SeventhFloor;
-import com.alanchern.floordirectory.floor.SixthFloor;
-import com.alanchern.floordirectory.floor.ThirdFloor;
+import com.alanchern.floordirectory.MainActivity;
+import com.alanchern.floordirectory.R;
 import com.alanchern.floordirectory.model.Floor;
 import com.alanchern.floordirectory.model.Unit;
 

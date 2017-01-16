@@ -1,4 +1,4 @@
-package com.alanchern.floordirectory.unitdetail;
+package com.alanchern.floordirectory.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alanchern.floordirectory.MainActivity;
 import com.alanchern.floordirectory.R;
 import com.alanchern.floordirectory.model.Unit;
 
@@ -31,24 +32,29 @@ public class UnitDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        View view = View.inflate(getActivity(), R.layout.unit_detail_fragment, null);
+        View view = inflater.inflate(R.layout.unit_detail_fragment, container, false);
         init(view);
         return view;
     }
 
     private void init(View view) {
-        Unit unit = getArguments().getParcelable(UNIT_KEY);
-        if (unit != null) {
-            int floor = unit.getFloor();
-            String unitNumber = unit.getUnitNumber();
-            String unitName = unit.getUnitName();
+        // ((MainActivity) getActivity()).showBackButton();
 
-            TextView unitTitleText = (TextView) view.findViewById(R.id.unit_title);
-            unitTitleText.setText(unitName);
-            TextView floorText = (TextView) view.findViewById(R.id.unit_content1);
-            floorText.setText(String.valueOf(floor));
-            TextView unitNumberText = (TextView) view.findViewById(R.id.unit_content2);
-            unitNumberText.setText(unitNumber);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            Unit unit = bundle.getParcelable(UNIT_KEY);
+            if (unit != null) {
+                int floor = unit.getFloor();
+                String unitNumber = unit.getUnitNumber();
+                String unitName = unit.getUnitName();
+
+                TextView unitTitleText = (TextView) view.findViewById(R.id.unit_title);
+                unitTitleText.setText(unitName);
+                TextView floorText = (TextView) view.findViewById(R.id.unit_content1);
+                floorText.setText(String.valueOf(floor));
+                TextView unitNumberText = (TextView) view.findViewById(R.id.unit_content2);
+                unitNumberText.setText(unitNumber);
+            }
         }
     }
 }

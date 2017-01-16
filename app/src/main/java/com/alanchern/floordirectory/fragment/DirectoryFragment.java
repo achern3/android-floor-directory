@@ -1,4 +1,4 @@
-package com.alanchern.floordirectory;
+package com.alanchern.floordirectory.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.alanchern.floordirectory.utils.DirectoryAdapter;
+import com.alanchern.floordirectory.R;
 
 /**
  * Created by alanchern on 1/15/17.
@@ -24,6 +27,8 @@ public class DirectoryFragment extends Fragment {
     }
 
     private void init(View view) {
+        // ((MainActivity) getActivity()).hideBackButton();
+
         RecyclerView recycler = (RecyclerView) view.findViewById(R.id.directory_recycler);
         recycler.setHasFixedSize(true);
         DirectoryAdapter adapter = new DirectoryAdapter(NUMBER_FLOORS);
