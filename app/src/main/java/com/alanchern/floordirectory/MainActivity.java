@@ -1,12 +1,10 @@
 package com.alanchern.floordirectory;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +25,7 @@ import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 public class MainActivity extends AppCompatActivity {
     private ActionBar mActionBar;
     private MainPageAdapter mAdapter;
-    private boolean detailClicked = false;
+    private boolean mDetailClicked = false;
     private Unit mUnit;
 
     @Override
@@ -56,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
+                        if (!mDetailClicked) {
+                            hideBackButton();
+                        } else {
+                            showBackButton();
+                        }
                         break;
                     case 1:
                         hideBackButton();
@@ -91,8 +94,7 @@ public class MainActivity extends AppCompatActivity {
             switch (i) {
                 case 0:
                     fragment = new DirectoryFragment();
-                    if (detailClicked) {
-                        detailClicked = false;
+                    if (mDetailClicked) {
                         if (mUnit != null) {
                             fragment = UnitDetailFragment.newInstance(mUnit);
                             showBackButton();
@@ -135,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showUnitDetail(Unit unit) {
-        detailClicked = true;
+        mDetailClicked = true;
         mUnit = unit;
         mAdapter.notifyDataSetChanged();
     }
@@ -157,11 +159,17 @@ public class MainActivity extends AppCompatActivity {
         // super.onBackPressed();
     }
 
+    private void onCustomBackPressed() {
+        mDetailClicked = false;
+        hideBackButton();
+        mAdapter.notifyDataSetChanged();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+                onCustomBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

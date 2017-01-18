@@ -28,8 +28,6 @@ public class DirectoryFragment extends Fragment {
     }
 
     private void init(View view) {
-        ((MainActivity) getActivity()).showBackButton();
-
         RecyclerView recycler = (RecyclerView) view.findViewById(R.id.directory_recycler);
         recycler.setHasFixedSize(true);
         DirectoryAdapter adapter = new DirectoryAdapter(NUMBER_FLOORS);

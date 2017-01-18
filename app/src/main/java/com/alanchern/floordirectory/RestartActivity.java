@@ -15,6 +15,7 @@ import android.util.Log;
 
 public class RestartActivity extends AppCompatActivity {
     private static final String ERROR_MESSAGE = "error_message";
+    private static final String RESTART_KEY = "restart_key";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

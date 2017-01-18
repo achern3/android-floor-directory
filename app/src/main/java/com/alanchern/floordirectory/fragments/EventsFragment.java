@@ -25,6 +25,6 @@ public class EventsFragment extends Fragment {
     }
 
     private void init(View view) {
-        // ((MainActivity) getActivity()).hideBackButton();
+        // init code
     }
 }

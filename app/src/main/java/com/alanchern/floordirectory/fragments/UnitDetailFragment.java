@@ -38,8 +38,6 @@ public class UnitDetailFragment extends Fragment {
     }
 
     private void init(View view) {
-        // ((MainActivity) getActivity()).showBackButton();
-
         Bundle bundle = getArguments();
         if (bundle != null) {
             Unit unit = bundle.getParcelable(UNIT_KEY);
