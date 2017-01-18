@@ -2,6 +2,7 @@ package com.alanchern.floordirectory;
 
 import android.app.Application;
 import android.content.Intent;
+import android.util.Log;
 
 import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
@@ -20,12 +21,13 @@ public class App extends Application {
 
         Iconify.with(new FontAwesomeModule());
 
-        /*Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread thread, Throwable e) {
+                Log.d("App", "uncaughtException()");
                 restartApp(e);
             }
-        });*/
+        });
     }
 
     private void restartApp(Throwable e) {

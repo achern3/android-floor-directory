@@ -1,11 +1,13 @@
 package com.alanchern.floordirectory;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -26,8 +28,36 @@ public class RestartActivity extends AppCompatActivity {
             Log.e("APP CRASHED", error);
         }
 
+        SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+        int numberRestarts = preferences.getInt(RESTART_KEY, 0);
+        Log.d("Number of restarts", String.valueOf(numberRestarts));
+        SharedPreferences.Editor editor = preferences.edit();
+
+        if (numberRestarts == 0) {
+            editor.putInt(RESTART_KEY, 1).apply();
+
+            restartApp();
+        } else {
+            editor.putInt(RESTART_KEY, 0).apply();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.app_crashed_restart).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    restartApp();
+                }
+            }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            }).setCancelable(false).create().show();
+        }
+    }
+
+    private void restartApp() {
         final ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setMessage("Recovering from crash...");
+        dialog.setMessage(getString(R.string.recovering_from_crash));
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.show();
 

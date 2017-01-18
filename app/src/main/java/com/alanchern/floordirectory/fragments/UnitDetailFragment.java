@@ -45,6 +45,8 @@ public class UnitDetailFragment extends Fragment {
                 int floor = unit.getFloor();
                 String unitNumber = unit.getUnitNumber();
                 String unitName = unit.getUnitName();
+                String contact = unit.getUnitContactNumber();
+                String unitDescription = unit.getUnitDescription();
 
                 TextView unitTitleText = (TextView) view.findViewById(R.id.unit_title);
                 unitTitleText.setText(unitName);
@@ -52,6 +54,10 @@ public class UnitDetailFragment extends Fragment {
                 floorText.setText(String.valueOf(floor));
                 TextView unitNumberText = (TextView) view.findViewById(R.id.unit_content2);
                 unitNumberText.setText(unitNumber);
+                TextView contactText = (TextView) view.findViewById(R.id.unit_content3);
+                contactText.setText(contact);
+                TextView descriptionText = (TextView) view.findViewById(R.id.unit_content4);
+                descriptionText.setText(unitDescription);
             }
         }
     }
