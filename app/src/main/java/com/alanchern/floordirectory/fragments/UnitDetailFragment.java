@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alanchern.floordirectory.MainActivity;
 import com.alanchern.floordirectory.R;
 import com.alanchern.floordirectory.models.Unit;
 

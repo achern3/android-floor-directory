@@ -3,6 +3,9 @@ package com.alanchern.floordirectory;
 import android.app.Application;
 import android.content.Intent;
 
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
+
 /**
  * Created by alanchern on 1/12/17.
  */
@@ -15,12 +18,14 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+        Iconify.with(new FontAwesomeModule());
+
+        /*Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread thread, Throwable e) {
                 restartApp(e);
             }
-        });
+        });*/
     }
 
     private void restartApp(Throwable e) {

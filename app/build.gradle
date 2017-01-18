@@ -28,5 +28,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.1.0'
     compile 'com.android.support:recyclerview-v7:25.1.0'
     compile 'com.android.support:design:25.1.0'
+    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2' // (v4.5)
     testCompile 'junit:junit:4.12'
 }

@@ -1,11 +1,13 @@
 package com.alanchern.floordirectory;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -19,6 +21,8 @@ import com.alanchern.floordirectory.fragments.EventsFragment;
 import com.alanchern.floordirectory.models.Unit;
 import com.alanchern.floordirectory.fragments.UnitDetailFragment;
 import com.alanchern.floordirectory.utils.NonSwipeableViewPager;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
 public class MainActivity extends AppCompatActivity {
     private ActionBar mActionBar;
@@ -44,6 +48,24 @@ public class MainActivity extends AppCompatActivity {
 
         mAdapter = new MainPageAdapter(getSupportFragmentManager());
         NonSwipeableViewPager viewPager = (NonSwipeableViewPager) findViewById(R.id.view_pager);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        hideBackButton();
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
         viewPager.setAdapter(mAdapter);
 
         // tablayout reference:
@@ -53,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
         mActionBar = getSupportActionBar();
         if (mActionBar != null) {
-            mActionBar.setHomeAsUpIndicator(ContextCompat.getDrawable(this, R.mipmap.ic_launcher));
-            // todo font awesome back arrow: fa_arrow-left
+            mActionBar.setHomeAsUpIndicator(new IconDrawable(this, FontAwesomeIcons.fa_arrow_left)
+                    .actionBarSize().colorRes(R.color.white));
         }
     }
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alanchern.floordirectory.MainActivity;
 import com.alanchern.floordirectory.utils.DirectoryAdapter;
 import com.alanchern.floordirectory.R;
 
@@ -27,7 +28,7 @@ public class DirectoryFragment extends Fragment {
     }
 
     private void init(View view) {
-        // ((MainActivity) getActivity()).hideBackButton();
+        ((MainActivity) getActivity()).showBackButton();
 
         RecyclerView recycler = (RecyclerView) view.findViewById(R.id.directory_recycler);
         recycler.setHasFixedSize(true);
