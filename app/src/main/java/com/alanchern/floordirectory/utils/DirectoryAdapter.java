@@ -1,10 +1,12 @@
 package com.alanchern.floordirectory.utils;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -45,6 +47,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
 
     class DirectoryViewHolder extends RecyclerView.ViewHolder {
         private Context mContext;
+        private LinearLayout mContainer;
         private TextView mFloorText;
         private TableLayout mTableLayout;
 
@@ -52,12 +55,15 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
             super(itemView);
 
             mContext = itemView.getContext();
+            mContainer = (LinearLayout) itemView.findViewById(R.id.floor_container);
             mFloorText = (TextView) itemView.findViewById(R.id.floor_text);
             mTableLayout = (TableLayout) itemView.findViewById(R.id.directory_table_layout);
         }
 
         void bind(int floor) {
-            setFloorText(floor);
+            setFloorSpecificInfo(floor);
+
+            // mContainer.setBackground(ContextCompat.getDrawable(mContext, R.drawable.nthu_logo_test));
 
             ArrayList<Unit> list = Floor.getUnits(floor);
             for (final Unit unit : list) {
@@ -81,7 +87,7 @@ public class DirectoryAdapter extends RecyclerView.Adapter<DirectoryAdapter.Dire
             }
         }
 
-        private void setFloorText(int floor) {
+        private void setFloorSpecificInfo(int floor) {
             String display = "";
             switch (floor) {
                 case 1:
